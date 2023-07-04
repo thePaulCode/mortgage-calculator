@@ -9,3 +9,5 @@ Project Scope
 4 Props Destructuring
 5 U Hook
 
+Tarefa
+Typography
