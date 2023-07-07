@@ -1,10 +1,11 @@
 import React from 'react'
 import SliderComponent from './common/SliderComponent'
 
-const SliderSelect = () => {
+const SliderSelect = ({data, setData}) => {
+  const bank_limit = 10000
   return (
     <>
-      <SliderComponent label="Home value" min={0} max={250} defaultValue={20} step={5} onChange={(e, value) => console.log(value)} unit='R$' amount={3000} />
+      <SliderComponent label="Home value" min={1000} max={bank_limit} defaultValue={data.homeValue} value={data.homeValue} step={100} onChange={(e, value) => setData({ homeValue: value})} unit='R$' amount={data.homeValue} />
 
       <SliderComponent label="Down payment" min={0} max={150} defaultValue={20} step={5} onChange={(e, value) => console.log(value)} unit='R$' amount={500} />
 
