@@ -1,16 +1,16 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Slider from '@mui/material/Slider';
 import { Stack, Typography } from '@mui/material';
 
 // Props Destructuring
-const SliderComponent = ({ defaultValue, min, max, step, onChange, value }) => {
+const SliderComponent = ({ defaultValue, min, max, step, onChange, value, label, unit, amount }) => {
   return (
 
-    <Fragment>
+    <Stack my={1.4}>
       {/* React.Fragment fake DOM */}
       <Stack gap={1}>
-        <Typography variant='subtitle2'> Home Value </Typography>
-        <Typography variant='h5'> R$ 3000 </Typography>
+        <Typography variant='subtitle2'>{label}</Typography>
+        <Typography variant='h5'>{unit} {amount} </Typography>
       </Stack>
       <Slider defaultValue={defaultValue}
         min={min}
@@ -23,10 +23,10 @@ const SliderComponent = ({ defaultValue, min, max, step, onChange, value }) => {
         value={value}
       />
       <Stack direction='row' gap={1} justifyContent={'space-between'}>
-      <Typography color='text.secondary'> R$ 1000 </Typography>
-      <Typography> R$ 10000 </Typography>
+        <Typography variant='caption' color='text.secondary'> {unit} {min} </Typography>
+        <Typography variant='caption' color='text.secondary'> {unit} {max}  </Typography>
       </Stack>
-    </Fragment>
+    </Stack>
   );
 };
 
