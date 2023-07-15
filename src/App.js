@@ -24,7 +24,7 @@ const [data, setData] = useState({
     <div className="App">
       <NavBar />      
       <Container maxWidth="xl" sx={{ mt: 4 }}>
-        <Grid container spacing={5}>
+        <Grid container spacing={5} alignItems='center'>
           <Grid item xs={12} md={6}>
 
           <SliderSelect data={data} setData={setData}/>
@@ -32,7 +32,7 @@ const [data, setData] = useState({
 
           </Grid>
           <Grid item xs={12} md={6}>
-          <Result />
+          <Result data={data} setData={setData}/>
 
           </Grid>
 
